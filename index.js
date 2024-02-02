@@ -57,3 +57,20 @@ const getPropertyValue = (obj, wantedKeyValue) => {
 console.log(getPropertyValue({name: "Alice", age: 25}, "name")); // "Alice"
 console.log(getPropertyValue({brand: "Toyota", model: "Camry"}, "year")); // undefined
 console.log(getPropertyValue({type: "laptop", brand: "Dell"}, "brand")); // "Dell".
+
+const invertObject = (experimental) => {
+  const experimentalToArrReverse = Object.entries(experimental);
+  const newObj = {};
+  console.log(experimentalToArrReverse)
+  for (const [key, value] of experimentalToArrReverse) {
+    newObj[value] = key;
+  }
+
+  return newObj
+};
+
+// я не понимаю как, но это работает. Разберёмся позже
+
+const originalObject1 = { a: 1, b: 2, c: 1 };
+const invertedObject1 = invertObject(originalObject1);
+console.log(invertedObject1); // Выведет: { '1': 'c', '2': 'b' }
